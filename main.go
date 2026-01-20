@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/inalambria/opencode-agent-flowkit/internal/installer"
+	"github.com/GH-Jaider/opencode-agent-flowkit/internal/installer"
 )
 
 var version = "0.1.0"

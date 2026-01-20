@@ -22,13 +22,13 @@ This tool sets up a structured agent workflow for OpenCode with the following ag
 ### From Source
 
 ```bash
-go install github.com/inalambria/opencode-agent-flowkit@latest
+go install github.com/GH-Jaider/opencode-agent-flowkit@latest
 ```
 
 ### Build Locally
 
 ```bash
-git clone https://github.com/inalambria/opencode-agent-flowkit.git
+git clone https://github.com/GH-Jaider/opencode-agent-flowkit.git
 cd opencode-agent-flowkit
 make install
 ```
