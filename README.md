@@ -16,6 +16,7 @@ This tool sets up a structured agent workflow for OpenCode with the following ag
 | **test-runner** | subagent | Executes tests and reports results |
 | **testing-strategy** | subagent | Defines what to test and what not to test |
 | **ask** | primary | Read-only agent for answering questions |
+| **merge** | primary | Detect and resolve git merge conflicts interactively |
 
 ## Installation
 
@@ -66,7 +67,8 @@ your-repo/
         ├── review.md          # Review/critic agent
         ├── test-runner.md     # Test execution agent
         ├── testing-strategy.md # Testing philosophy agent
-        └── ask.md             # Read-only Q&A agent
+        ├── ask.md             # Read-only Q&A agent
+        └── merge.md           # Merge conflict resolution agent
 ```
 
 ## Configuration
@@ -113,6 +115,27 @@ The intended workflow is:
 Plan → Execute → Review → Fix → Done
          ↑                   ↓
          └───────────────────┘
+```
+
+### Merge Conflict Resolution
+
+When you encounter merge conflicts, switch to the **merge** agent (Tab):
+
+1. **Detect** - Agent runs `git status` and identifies all conflicted files
+2. **Present** - For each conflict, shows both sides with context
+3. **Choose** - You pick a resolution: keep ours, keep theirs, keep both, or a smart merge
+4. **Apply** - Agent edits the file (with your approval) and offers to stage it
+5. **Commit** - You review and commit when ready
+
+```
+git merge <branch> → conflicts? → Switch to merge agent (Tab)
+                                        │
+                              For each conflict:
+                              ├── View ours vs theirs
+                              ├── Choose resolution
+                              └── Approve edit
+                                        │
+                              git add → git commit
 ```
 
 ## Updating

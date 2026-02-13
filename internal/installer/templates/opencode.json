@@ -35,6 +35,10 @@
     "ask": {
       "mode": "primary",
       "description": "Answer questions about the project read-only"
+    },
+    "merge": {
+      "mode": "primary",
+      "description": "Detect and resolve git merge conflicts interactively"
     }
   }
 }
